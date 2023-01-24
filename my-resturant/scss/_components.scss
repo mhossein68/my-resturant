@@ -1,0 +1,226 @@
+.hamberger-menu {
+    width: 40px;
+    height: 40px;
+    position: fixed;
+    top: 10%;
+    right: 5%;
+    z-index: 300;
+
+
+    .menu {
+        @extend %fullspace;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        cursor: pointer;
+        transition: all .5s;
+
+
+        &-line {
+            width: 100%;
+            height: 4px;
+            background-color: $color-primary;
+            transition: all .5s .5s;
+            transform-origin: right;
+        }
+    }
+}
+
+.logo {
+    @include flexLayout;
+    font-size: 70px;
+    color: $color-primary;
+    width: 110px;
+    height: 110px;
+    border: 3px solid $color-primary;
+    border-radius: 50%;
+    margin-right: 20px;
+
+    @media (max-width: 1140px) {
+        font-size: 50px;
+        width: 80px;
+        height: 80px;
+    }
+
+    @media (max-width: 760px) {
+        font-size: 30px;
+        width: 50px;
+        height: 50px;
+    }
+
+    @media (max-width: 540px) {
+        font-size: 20px;
+        width: 35px;
+        height: 35px;
+    }
+
+}
+
+.main-name {
+    @include textStyle;
+    font-family: $font-nunito;
+    font-size: 50px;
+    color: #bbb;
+
+    @media (max-width: 1140px) {
+        font-size: 30px;
+    }
+
+    @media (max-width: 760px) {
+        font-size: 20px;
+    }
+
+    @media (max-width: 540px) {
+        font-size: 16px;
+    }
+
+    @media (max-width: 435px) {
+        font-size: 12px;
+    }
+
+    @media (max-width: 370px) {
+        font-size: 8px;
+    }
+}
+
+.sub-name {
+    font-family: $font-josefinSans;
+    font-size: 50xp;
+    color: $color-secendery;
+    text-align: center;
+    @include textStyle;
+
+    @media (max-width: 540px) {
+        font-size: 10px;
+    }
+
+    @media (max-width: 370px) {
+        font-size: 6px;
+    }
+}
+
+.main-heading {
+    font-family: $font-dancingScript;
+    font-size: 150px;
+    font-weight: 300;
+    color: $color-primary;
+
+    @media (max-width: 1140px) {
+        font-size: 100px;
+    }
+
+    @media (max-width: 760px) {
+        font-size: 70px;
+    }
+}
+
+.sub-heading {
+    font-family: $font-josefinSans;
+    font-size: 60px;
+    font-weight: 300;
+    color: $color-secendery;
+    margin-bottom: 50px;
+
+    @media (max-width: 1140px) {
+        font-size: 40px;
+    }
+
+    @media (max-width: 760px) {
+        font-size: 25px;
+    }
+
+    @media (max-width: 540px) {
+        font-size: 15px;
+
+    }
+}
+
+.main-btn {
+    @include btnStyle(170px,45px);
+
+    @media (max-width: 540px) {
+        @include btnStyle(170px,35px);
+
+    }
+}
+
+.card {
+    width: 33.3333%;
+    height: 30vw;
+    position: relative;
+    overflow: hidden;
+
+    @media (max-width: 700px) {
+        width: 50%;
+        height: 40vw;
+    }
+
+    &:hover .card-overlay {
+        left: 0;
+
+    }
+
+    &-overlay {
+        @extend %fullspace;
+        @include flexLayout;
+        flex-direction: column;
+        ;
+        position: absolute;
+        top: 0;
+        left: -100%;
+        color: $color-white;
+        background-color: rgba($color-dark, .4);
+        z-index: 10;
+        transition: left .5s;
+
+
+        &-heading {
+            font-family: $font-josefinSans;
+            font-size: 40px;
+            @include textStyle;
+
+            @media (max-width: 900px) {
+                font-size: 30px;
+            }
+
+            @media (max-width: 500px) {
+                font-size: 20px;
+            }
+
+            @media (max-width: 400px) {
+                font-size: 16px;
+            }
+        }
+
+        &-paragraph {
+            font-family: $font-josefinSans;
+            font-size: 30px;
+            color: $color-primary;
+            @include textStyle;
+            margin-top: 20px;
+
+            @media (max-width: 900px) {
+                font-size: 12px;
+            }
+        }
+
+        &-btn {
+            @include btnStyle(170px , 45px);
+            margin-top: 20px;
+
+            @media (max-width: 900px) {
+                @include btnStyle(120px , 35px);
+            }
+
+            @media (max-width: 400px) {
+                @include btnStyle(90px , 28px);
+            }
+        }
+    }
+
+    &-img {
+        object-fit: cover;
+        opacity: .5;
+        @extend %fullspace;
+    }
+}
